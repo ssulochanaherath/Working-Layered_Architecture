@@ -1,5 +1,7 @@
 package com.example.layeredarchitecture.dao;
 
+import com.example.layeredarchitecture.model.OrderDTO;
+
 import java.sql.*;
 
 public class OrderDAOImpl implements OrderDAO {
