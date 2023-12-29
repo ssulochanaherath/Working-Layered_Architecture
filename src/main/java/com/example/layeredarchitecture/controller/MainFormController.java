@@ -111,13 +111,13 @@ public class MainFormController {
 
             switch (icon.getId()) {
                 case "imgCustomer":
-                    root = FXMLLoader.load(this.getClass().getResource("/com/example/layeredarchitecture/manage-customers-form.fxml"));
+                    root = FXMLLoader.load(this.getClass().getResource("/lk/ijse/layeredarchitecture/manage-customers-form.fxml"));
                     break;
                 case "imgItem":
-                    root = FXMLLoader.load(this.getClass().getResource("/com/example/layeredarchitecture/manage-items-form.fxml"));
+                    root = FXMLLoader.load(this.getClass().getResource("/lk/ijse/layeredarchitecture/manage-items-form.fxml"));
                     break;
                 case "imgOrder":
-                    root = FXMLLoader.load(this.getClass().getResource("/com/example/layeredarchitecture/place-order-form.fxml"));
+                    root = FXMLLoader.load(this.getClass().getResource("/lk/ijse/layeredarchitecture/place-order-form.fxml"));
                     break;
                 case "imgViewOrders":
                     root = null;

@@ -13,9 +13,9 @@ public class ItemBOImpl implements ItemBO {
     ItemDAO itemDAO= (ItemDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ITEM);
     @Override
     public ArrayList<ItemDTO> getAllItem() throws SQLException, ClassNotFoundException {
-        ArrayList<ItemDTO> items=itemDAO.getAll();
+        ArrayList<Item> items=itemDAO.getAll();
         ArrayList<ItemDTO> itemDTOS=new ArrayList<>();
-        for (ItemDTO item:items) {
+        for (Item item:items) {
             itemDTOS.add(new ItemDTO(item.getCode(),item.getDescription(),item.getUnitPrice(),item.getQtyOnHand()));
         }
         return itemDTOS;
@@ -43,12 +43,12 @@ public class ItemBOImpl implements ItemBO {
 
     @Override
     public String generateItemID() throws SQLException, ClassNotFoundException {
-        return itemDAO.generateId();
+        return itemDAO.generateID();
     }
 
     @Override
     public ItemDTO searchItem(String id) throws SQLException, ClassNotFoundException {
-        ItemDTO item = itemDAO.search(id);
+        Item item = itemDAO.search(id);
         return new ItemDTO(item.getCode(),item.getDescription(),item.getUnitPrice(), item.getQtyOnHand());
     }
 }

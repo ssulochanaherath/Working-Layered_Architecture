@@ -3,9 +3,8 @@ package com.example.layeredarchitecture.dto;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-
-
 public class OrderDetailDTO implements Serializable {
+
     private String oid;
     private String itemCode;
     private int qty;

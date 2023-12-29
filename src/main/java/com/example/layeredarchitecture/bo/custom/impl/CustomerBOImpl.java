@@ -16,9 +16,9 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public ArrayList<CustomerDTO> getAllCustomer() throws SQLException, ClassNotFoundException {
-        ArrayList<CustomerDTO> customers=customerDAO.getAll();
+        ArrayList<Customer> customers=customerDAO.getAll();
         ArrayList<CustomerDTO> customerDTOS=new ArrayList<>();
-        for (CustomerDTO customer:customers) {
+        for (Customer customer:customers) {
             customerDTOS.add(new CustomerDTO(customer.getId(),customer.getName(),customer.getAddress()));
         }
         return customerDTOS;
@@ -47,12 +47,12 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public String generateCustomerID() throws SQLException, ClassNotFoundException {
-        return customerDAO.generateId();
+        return customerDAO.generateID();
     }
 
     @Override
     public CustomerDTO searchCustomer(String id) throws SQLException, ClassNotFoundException {
-        CustomerDTO customer=customerDAO.search(id);
+        Customer customer=customerDAO.search(id);
         CustomerDTO customerDTO=new CustomerDTO(customer.getId(),customer.getName(),customer.getAddress());
         return customerDTO;
     }
