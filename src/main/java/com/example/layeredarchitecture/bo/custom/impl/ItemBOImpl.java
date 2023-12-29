@@ -1,10 +1,10 @@
 package com.example.layeredarchitecture.bo.custom.impl;
 
-import lk.ijse.layeredarchitecture.bo.custom.ItemBO;
-import lk.ijse.layeredarchitecture.dao.DAOFactory;
-import lk.ijse.layeredarchitecture.dao.custom.ItemDAO;
-import lk.ijse.layeredarchitecture.dto.ItemDTO;
-import lk.ijse.layeredarchitecture.entity.Item;
+import com.example.layeredarchitecture.bo.custom.ItemBO;
+import com.example.layeredarchitecture.dao.DAOFactory;
+import com.example.layeredarchitecture.dao.custom.ItemDAO;
+import com.example.layeredarchitecture.dto.ItemDTO;
+import com.example.layeredarchitecture.entity.Item;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -13,9 +13,9 @@ public class ItemBOImpl implements ItemBO {
     ItemDAO itemDAO= (ItemDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ITEM);
     @Override
     public ArrayList<ItemDTO> getAllItem() throws SQLException, ClassNotFoundException {
-        ArrayList<Item> items=itemDAO.getAll();
+        ArrayList<ItemDTO> items=itemDAO.getAll();
         ArrayList<ItemDTO> itemDTOS=new ArrayList<>();
-        for (Item item:items) {
+        for (ItemDTO item:items) {
             itemDTOS.add(new ItemDTO(item.getCode(),item.getDescription(),item.getUnitPrice(),item.getQtyOnHand()));
         }
         return itemDTOS;
@@ -43,12 +43,12 @@ public class ItemBOImpl implements ItemBO {
 
     @Override
     public String generateItemID() throws SQLException, ClassNotFoundException {
-        return itemDAO.generateID();
+        return itemDAO.generateId();
     }
 
     @Override
     public ItemDTO searchItem(String id) throws SQLException, ClassNotFoundException {
-        Item item = itemDAO.search(id);
+        ItemDTO item = itemDAO.search(id);
         return new ItemDTO(item.getCode(),item.getDescription(),item.getUnitPrice(), item.getQtyOnHand());
     }
 }

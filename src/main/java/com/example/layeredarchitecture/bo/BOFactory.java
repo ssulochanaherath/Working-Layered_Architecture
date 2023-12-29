@@ -1,8 +1,8 @@
 package com.example.layeredarchitecture.bo;
 
-import lk.ijse.layeredarchitecture.bo.custom.impl.CustomerBOImpl;
-import lk.ijse.layeredarchitecture.bo.custom.impl.ItemBOImpl;
-import lk.ijse.layeredarchitecture.bo.custom.impl.PlaceOrderBOImpl;
+import com.example.layeredarchitecture.bo.custom.impl.CustomerBOImpl;
+import com.example.layeredarchitecture.bo.custom.impl.ItemBOImpl;
+import com.example.layeredarchitecture.bo.custom.impl.PlaceOrderBOImpl;
 
 public class BOFactory {
     private static BOFactory boFactory;

@@ -1,32 +1,30 @@
-package com.example.layeredarchitecture.model;
+package com.example.layeredarchitecture.entity;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-
-
-public class OrderDTO  implements Serializable {
+public class Order {
     private String orderId;
     private LocalDate orderDate;
     private String customerId;
     private String customerName;
     private BigDecimal orderTotal;
 
-    public OrderDTO() {
-    }
-    public OrderDTO(String orderId, LocalDate orderDate, String customerId) {
-        this.orderId = orderId;
-        this.orderDate = orderDate;
-        this.customerId = customerId;
-    }
-
-    public OrderDTO(String orderId, LocalDate orderDate, String customerId, String customerName, BigDecimal orderTotal) {
+    public Order(String orderId, LocalDate orderDate, String customerId, String customerName, BigDecimal orderTotal) {
         this.orderId = orderId;
         this.orderDate = orderDate;
         this.customerId = customerId;
         this.customerName = customerName;
         this.orderTotal = orderTotal;
+    }
+
+    public Order() {
+    }
+
+    public Order(String orderId, LocalDate orderDate, String customerId) {
+        this.orderId = orderId;
+        this.orderDate = orderDate;
+        this.customerId = customerId;
     }
 
     public String getOrderId() {
@@ -67,16 +65,5 @@ public class OrderDTO  implements Serializable {
 
     public void setOrderTotal(BigDecimal orderTotal) {
         this.orderTotal = orderTotal;
-    }
-
-    @Override
-    public String toString() {
-        return "OrderDTO{" +
-                "orderId='" + orderId + '\'' +
-                ", orderDate=" + orderDate +
-                ", customerId='" + customerId + '\'' +
-                ", customerName='" + customerName + '\'' +
-                ", orderTotal=" + orderTotal +
-                '}';
     }
 }

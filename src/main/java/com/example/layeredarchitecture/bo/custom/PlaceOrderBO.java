@@ -1,9 +1,9 @@
 package com.example.layeredarchitecture.bo.custom;
 
-import lk.ijse.layeredarchitecture.bo.SuperBO;
-import lk.ijse.layeredarchitecture.dto.CustomerDTO;
-import lk.ijse.layeredarchitecture.dto.ItemDTO;
-import lk.ijse.layeredarchitecture.dto.OrderDetailDTO;
+import com.example.layeredarchitecture.bo.SuperBO;
+import com.example.layeredarchitecture.dto.CustomerDTO;
+import com.example.layeredarchitecture.dto.ItemDTO;
+import com.example.layeredarchitecture.dto.OrderDetailDTO;
 
 import java.sql.SQLException;
 import java.time.LocalDate;

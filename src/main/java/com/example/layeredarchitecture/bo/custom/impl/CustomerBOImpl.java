@@ -1,10 +1,10 @@
 package com.example.layeredarchitecture.bo.custom.impl;
 
-import lk.ijse.layeredarchitecture.bo.custom.CustomerBO;
-import lk.ijse.layeredarchitecture.dao.DAOFactory;
-import lk.ijse.layeredarchitecture.dao.custom.CustomerDAO;
-import lk.ijse.layeredarchitecture.dto.CustomerDTO;
-import lk.ijse.layeredarchitecture.entity.Customer;
+import com.example.layeredarchitecture.bo.custom.CustomerBO;
+import com.example.layeredarchitecture.dao.DAOFactory;
+import com.example.layeredarchitecture.dao.custom.CustomerDAO;
+import com.example.layeredarchitecture.dto.CustomerDTO;
+import com.example.layeredarchitecture.entity.Customer;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -16,9 +16,9 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public ArrayList<CustomerDTO> getAllCustomer() throws SQLException, ClassNotFoundException {
-        ArrayList<Customer> customers=customerDAO.getAll();
+        ArrayList<CustomerDTO> customers=customerDAO.getAll();
         ArrayList<CustomerDTO> customerDTOS=new ArrayList<>();
-        for (Customer customer:customers) {
+        for (CustomerDTO customer:customers) {
             customerDTOS.add(new CustomerDTO(customer.getId(),customer.getName(),customer.getAddress()));
         }
         return customerDTOS;
@@ -47,12 +47,12 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public String generateCustomerID() throws SQLException, ClassNotFoundException {
-        return customerDAO.generateID();
+        return customerDAO.generateId();
     }
 
     @Override
     public CustomerDTO searchCustomer(String id) throws SQLException, ClassNotFoundException {
-        Customer customer=customerDAO.search(id);
+        CustomerDTO customer=customerDAO.search(id);
         CustomerDTO customerDTO=new CustomerDTO(customer.getId(),customer.getName(),customer.getAddress());
         return customerDTO;
     }
