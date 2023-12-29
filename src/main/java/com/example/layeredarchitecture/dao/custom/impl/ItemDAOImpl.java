@@ -4,7 +4,6 @@ import com.example.layeredarchitecture.dao.SQLUtil;
 import com.example.layeredarchitecture.dao.custom.ItemDAO;
 import com.example.layeredarchitecture.dto.ItemDTO;
 import com.example.layeredarchitecture.entity.Item;
-import com.example.layeredarchitecture.entity.Order;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ public class ItemDAOImpl implements ItemDAO {
         return getAllItem;
     }
     @Override
-    public boolean save(Order itemDTO) throws SQLException, ClassNotFoundException {
+    public boolean save(Item itemDTO) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("INSERT INTO Item VALUES (?,?,?,?)",
                 itemDTO.getCode(),itemDTO.getDescription(),itemDTO.getUnitPrice(),itemDTO.getQtyOnHand());
     }

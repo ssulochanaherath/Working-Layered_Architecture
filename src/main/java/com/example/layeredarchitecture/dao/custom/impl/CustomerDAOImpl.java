@@ -4,7 +4,6 @@ import com.example.layeredarchitecture.dao.SQLUtil;
 import com.example.layeredarchitecture.dao.custom.CustomerDAO;
 import com.example.layeredarchitecture.dto.CustomerDTO;
 import com.example.layeredarchitecture.entity.Item;
-import com.example.layeredarchitecture.entity.Order;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -23,9 +22,9 @@ public class CustomerDAOImpl implements CustomerDAO {
         return getAllCustomer;
     }
     @Override
-    public boolean save(Order dto) throws SQLException, ClassNotFoundException {
+    public boolean save(Item itemDTO) throws SQLException, ClassNotFoundException {
             return SQLUtil.execute("INSERT INTO Customer (id,name, address) VALUES (?,?,?)",
-                    dto.getId(), dto.getName(), dto.getAddress());
+                    itemDTO.getId(), itemDTO.getName(), itemDTO.getAddress());
     }
     @Override
     public boolean update(Item dto) throws SQLException, ClassNotFoundException {

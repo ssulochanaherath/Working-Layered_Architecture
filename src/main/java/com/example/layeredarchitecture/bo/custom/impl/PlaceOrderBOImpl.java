@@ -2,12 +2,13 @@ package com.example.layeredarchitecture.bo.custom.impl;
 
 import com.example.layeredarchitecture.bo.custom.PlaceOrderBO;
 import com.example.layeredarchitecture.dao.DAOFactory;
-import com.example.layeredarchitecture.dao.custom.*;
+import com.example.layeredarchitecture.dao.custom.CustomerDAO;
+import com.example.layeredarchitecture.dao.custom.ItemDAO;
+import com.example.layeredarchitecture.dao.custom.OrderDAO;
 import com.example.layeredarchitecture.db.DBConnection;
 import com.example.layeredarchitecture.dto.CustomerDTO;
 import com.example.layeredarchitecture.dto.ItemDTO;
 import com.example.layeredarchitecture.dto.OrderDetailDTO;
-import com.example.layeredarchitecture.entity.Customer;
 import com.example.layeredarchitecture.entity.Item;
 import com.example.layeredarchitecture.entity.Order;
 import com.example.layeredarchitecture.entity.OrderDetail;
@@ -105,7 +106,7 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
 
     @Override
     public String generateOrderID() throws SQLException, ClassNotFoundException {
-        return orderDAO.generateID();
+        return orderDAO.generateId();
     }
 
     @Override
